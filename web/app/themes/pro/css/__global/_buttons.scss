@@ -1,0 +1,40 @@
+.c-btn {
+	@include button;
+
+	.icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		line-height: 0;
+	}
+}
+
+.c-btn--primary {
+	@include button-primary;
+}
+
+.c-btn--secondary {
+	@include button-secondary;
+}
+
+.c-btn--tertiary {
+	@include button-tertiary;
+}
+
+.buttons-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	gap: rem(16);
+	margin-bottom: rem(32);
+	align-items: center;
+
+	&.align {
+		&--center {
+			justify-content: center;
+		}
+
+		&--right {
+			justify-content: flex-end;
+		}
+	}
+}

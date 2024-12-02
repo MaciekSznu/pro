@@ -1,0 +1,27 @@
+/*
+----------------------------------------
+VARIABLES
+Here we have different variables, used in project
+Special groups of variables we keep in _colors.scss, _fonts.scss
+*/
+
+$media-margin: 40; //px
+
+// Container width variables
+
+$container-max-widths: (
+	sm: 992px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1342px
+);
+
+$container-padding-mobile: 15; //px
+$container-padding-desktop: 15; //px
+
+// Transitions
+$default-transition-speed: 0.2s;
+$default-transition: 0.2s linear;
+
+// Outline
+$outline: 2px solid #7aacfe;

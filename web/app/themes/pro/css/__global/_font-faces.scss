@@ -1,0 +1,85 @@
+$font-strawford : "strawford";
+
+@font-face {
+	font-family: $font-strawford;
+	src: url("../fonts/strawford/strawford-black-webfont.eot");
+	src:
+		url("../fonts/strawford/strawford-black-webfont.eot?#iefix") format("embedded-opentype"),
+		url("../fonts/strawford/strawford-black-webfont.woff2") format("woff2"),
+		url("../fonts/strawford/strawford-black-webfont.woff") format("woff"),
+		url("../fonts/strawford/strawford-black-webfont.ttf") format("truetype");
+	font-weight: 900;
+	font-style: normal;
+}
+
+// @font-face {
+// 	font-family: $font-strawford;
+// 	src: url("strawford-bold-webfont.eot");
+// 	src:
+// 		url("strawford-bold-webfont.eot?#iefix") format("embedded-opentype"),
+// 		url("strawford-bold-webfont.woff2") format("woff2"),
+// 		url("strawford-bold-webfont.woff") format("woff"),
+// 		url("strawford-bold-webfont.ttf") format("truetype");
+// 	font-weight: 700;
+// 	font-style: normal;
+// }
+
+// @font-face {
+// 	font-family: $font-strawford;
+// 	src: url("strawford-extralight-webfont.eot");
+// 	src:
+// 		url("strawford-extralight-webfont.eot?#iefix") format("embedded-opentype"),
+// 		url("strawford-extralight-webfont.woff2") format("woff2"),
+// 		url("strawford-extralight-webfont.woff") format("woff"),
+// 		url("strawford-extralight-webfont.ttf") format("truetype");
+// 	font-weight: 200;
+// 	font-style: normal;
+// }
+
+// @font-face {
+// 	font-family: $font-strawford;
+// 	src: url("strawford-light-webfont.eot");
+// 	src:
+// 		url("strawford-light-webfont.eot?#iefix") format("embedded-opentype"),
+// 		url("strawford-light-webfont.woff2") format("woff2"),
+// 		url("strawford-light-webfont.woff") format("woff"),
+// 		url("strawford-light-webfont.ttf") format("truetype");
+// 	font-weight: 300;
+// 	font-style: normal;
+// }
+
+// @font-face {
+// 	font-family: $font-strawford;
+// 	src: url("strawford-medium-webfont.eot");
+// 	src:
+// 		url("strawford-medium-webfont.eot?#iefix") format("embedded-opentype"),
+// 		url("strawford-medium-webfont.woff2") format("woff2"),
+// 		url("strawford-medium-webfont.woff") format("woff"),
+// 		url("strawford-medium-webfont.ttf") format("truetype");
+// 	font-weight: 500;
+// 	font-style: normal;
+// }
+
+@font-face {
+	font-family: $font-strawford;
+	src: url("../fonts/strawford/strawford-regular-webfont.eot");
+	src:
+		url("../fonts/strawford/strawford-regular-webfont.eot?#iefix") format("embedded-opentype"),
+		url("../fonts/strawford/strawford-regular-webfont.woff2") format("woff2"),
+		url("../fonts/strawford/strawford-regular-webfont.woff") format("woff"),
+		url("../fonts/strawford/strawford-regular-webfont.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+}
+
+// @font-face {
+// 	font-family: $font-strawford;
+// 	src: url("strawford-thin-webfont.eot");
+// 	src:
+// 		url("strawford-thin-webfont.eot?#iefix") format("embedded-opentype"),
+// 		url("strawford-thin-webfont.woff2") format("woff2"),
+// 		url("strawford-thin-webfont.woff") format("woff"),
+// 		url("strawford-thin-webfont.ttf") format("truetype");
+// 	font-weight: 100;
+// 	font-style: normal;
+// }

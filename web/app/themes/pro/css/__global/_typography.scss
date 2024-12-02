@@ -1,0 +1,358 @@
+/* stylelint-disable */
+
+// Text Elements
+p {
+	margin: 0 0 rem(27);
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	&.is-style-uppercase {
+		text-transform: uppercase;
+	}
+
+	&.is-style-preheading {
+		color: $color--black;
+		text-transform: uppercase;
+	}
+
+	&.lead {
+		@include font(26, 34);
+
+		@include media(">=md") {
+			@include font(32, 40);
+		}
+
+		@include media(">=xl") {
+			@include font(36, 46);
+		}
+	}
+
+	&.black {
+		font-weight: 900;
+	}
+
+	@include font(18, 29);
+
+	@include media(">=md") {
+		@include font(22, 31);
+	}
+
+	@include media(">=xl") {
+		@include font(26, 37);
+	}
+
+	&.txt-2 {
+		@include font(18, 22);
+
+		@include media(">=md") {
+			@include font(18, 25);
+		}
+
+		@include media(">=xl") {
+			@include font(20, 28);
+		}
+	}
+
+	&.txt-3 {
+		@include font(14, 20);
+
+		@include media(">=md") {
+			@include font(16, 22);
+		}
+
+		@include media(">=xl") {
+			@include font(18, 24);
+		}
+	}
+
+	// &.txt-4 {
+	// 	@include font(14, 20);
+
+	// 	@include media(">=md") {
+	// 		@include font(16, 22);
+	// 	}
+
+	// 	@include media(">=xl") {
+	// 		@include font(18, 24);
+	// 	}
+	// }
+}
+
+//Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	font-weight: 900;
+	margin-top: 0;
+	letter-spacing: rem(-2);
+
+	&:only-child {
+		margin-bottom: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+h1,
+.h1 {
+	@include font(48, 48);
+
+	@include media(">=md") {
+		@include font(72, 72);
+	}
+
+	@include media(">=xl") {
+		@include font(102, 102);
+	}
+}
+
+h2,
+.h2 {
+	@include font(36, 36);
+
+	@include media(">=md") {
+		@include font(54, 54);
+	}
+
+	@include media(">=xl") {
+		@include font(78, 78);
+	}
+}
+
+h3,
+.h3 {
+	@include font(32, 34);
+
+	@include media(">=md") {
+		@include font(48, 50);
+	}
+
+	@include media(">=xl") {
+		@include font(68, 71);
+	}
+}
+
+h4,
+.h4 {
+	@include font(28, 30);
+
+	@include media(">=md") {
+		@include font(42, 44);
+	}
+
+	@include media(">=xl") {
+		@include font(60, 62);
+	}
+}
+
+h5,
+.h5 {
+	@include font(26, 28);
+
+	@include media(">=md") {
+		@include font(36, 38);
+	}
+
+	@include media(">=xl") {
+		@include font(54, 56);
+	}
+}
+
+
+h6,
+.h6 {
+	@include font(24, 26);
+
+	@include media(">=md") {
+		@include font(32, 34);
+	}
+
+	@include media(">=xl") {
+		@include font(42, 44);
+	}
+}
+
+/* Custom List Styles */
+ol {
+	counter-reset: item;
+	display: block;
+	padding: 0;
+	margin: 0 0 em(25);
+	list-style: none;
+
+	@include media('>=md') {
+		margin: 0 0 em(32);
+	}
+
+	li {
+		display: block;
+		padding: 0 0 0 rem(32);
+		position: relative;
+		margin: 0 0 rem(5);
+
+		&:last-child {
+			margin: 0;
+		}
+
+		&:before {
+			content: counters(item, '.') '.';
+			counter-increment: item;
+			position: absolute;
+			left: 0;
+			font-weight: $font-weight-base;
+		}
+
+		li {
+			padding: 0 0 0 rem(32);
+			position: relative;
+			margin: 0 0 rem(5);
+
+
+			@include media('>=md') {
+				padding: 0 0 0 rem(42);
+			}
+
+			&:last-child {
+				margin: 0;
+			}
+
+			&:before {
+				content: counters(item, '.') ' ';
+			}
+		}
+	}
+
+	ol {
+		margin: rem(10) 0;
+	}
+}
+
+ul:not([class]) {
+	padding: 0;
+	margin: 0 0 em(25);
+	list-style: none;
+
+	@include media('>=md') {
+		margin: 0 0 em(32);
+	}
+
+	li {
+		padding: 0 0 0 rem(32);
+		position: relative;
+		margin: 0 0 rem(5);
+
+		&:last-child {
+			margin: 0;
+		}
+
+		&:before {
+			content: '';
+			display: block;
+			width: rem(7);
+			height: rem(7);
+			position: absolute;
+			top: rem(9);
+			left: rem(0);
+			border-radius: 50%;
+			background: $text-color-base;
+		}
+
+		li {
+			padding: 0 0 0 rem(32);
+			margin: 0 0 rem(2);
+
+			&:last-child {
+				margin: 0;
+			}
+
+			&:before {
+				content: '';
+				width: rem(12);
+				height: rem(2);
+				top: rem(12);
+				left: 0;
+				border: none;
+				border-radius: 0;
+			}
+		}
+
+		ul {
+			margin: rem(10) 0;
+
+			@include media('>=md') {
+				margin: rem(10) 0;
+			}
+		}
+	}
+}
+
+// Normalize links across browsers
+a {
+	display: inline-block;
+	font-weight: 400;
+	color: $link-color;
+	text-decoration: none;
+	transition: color $default-transition-speed;
+
+	&:focus,
+	&:hover {
+		color: $link-hover-color;
+	}
+
+	.editor-rich-text &,
+	.page-content &:not([class]) {
+		position: relative;
+	}
+
+	.editor-rich-text &::before,
+	.page-content &:not([class])::before {
+		content: "";
+		width: 100%;
+		height: rem(1);
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		background-color: currentcolor;
+		transition: background-color 0.2s;
+	}
+
+	.rich-text &:hover::before,
+	.page-content &:not([class]):hover::before {
+		background-color: $link-hover-color;
+	}
+
+	img {
+		border: 0;
+	}
+}
+
+/* Horizontal Line */
+hr {
+	margin: rem(40) 0 rem(40);
+	border-top: 1px solid $text-color-base;
+}
+
+::selection {
+	color: $text-light;
+	background: $color--black;
+}
+
+::-moz-selection {
+	color: $text-light;
+	background: $color--black;
+}
+
+/* stylelint-enable */

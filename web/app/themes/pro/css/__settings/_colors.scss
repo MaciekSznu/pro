@@ -1,0 +1,21 @@
+/*
+----------------------------------------
+COLORS
+
+Colors in variables.
+*/
+
+$color--black: #000;
+$color--white: #fff;
+
+// Text
+$text-color-base: $color--black;
+$text-light: $color--white;
+$link-color: $text-light;
+$link-hover-color: $text-light;
+
+// Theme Colors
+$color-1: #1a1a1a;
+$color-2: #f2f2f2;
+
+$body-background-color: $text-light;

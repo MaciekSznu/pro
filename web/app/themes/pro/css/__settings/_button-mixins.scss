@@ -1,0 +1,89 @@
+@mixin button() {
+	display: inline-flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: rem(18);
+	font-weight: 400;
+	line-height: rem(18);
+	cursor: pointer;
+	appearance: none;
+	column-gap: rem(10);
+	min-width: rem(169);
+	min-height: rem(40);
+	border-radius: rem(100);
+	transition:
+		color $default-transition,
+		border-color $default-transition,
+		background-color $default-transition;
+}
+
+@mixin button-primary() {
+	padding: rem(9) rem(12);
+	border: rem(1) solid $text-light;
+	background-color: $text-color-base;
+	color: $text-light;
+
+	svg {
+		width: rem(31);
+		path {
+			transition: fill $default-transition;
+			fill: $text-light;
+		}
+	}
+
+	&:hover,
+	&:focus {
+		background-color: $text-light;
+		border-color: $text-color-base;
+		color: $text-color-base;
+
+		svg {
+			path {
+				fill: $text-color-base;
+			}
+		}
+	}
+}
+
+@mixin button-secondary() {
+	padding: rem(9) rem(12);
+	border: rem(1) solid $text-color-base;
+	background-color: $text-light;
+	color: $text-color-base;
+
+	svg {
+		width: rem(31);
+		path {
+			transition: fill $default-transition;
+			fill: $text-color-base;
+		}
+	}
+
+	&:hover,
+	&:focus {
+		background-color: $text-color-base;
+		border-color: $text-light;
+		color: $text-light;
+
+		svg {
+			path {
+				fill: $text-light;
+			}
+		}
+	}
+}
+
+@mixin button-tertiary() {
+	padding: rem(14) rem(28);
+	border: rem(2) solid $link-color;
+	border-radius: rem(100);
+	background-color: $link-color;
+	color: $text-color-base;
+
+	&:hover,
+	&:focus {
+		background-color: $link-hover-color;
+		border-color: $link-hover-color;
+		color: $color-1;
+	}
+}

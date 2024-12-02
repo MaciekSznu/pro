@@ -1,0 +1,186 @@
+@import "__settings/init";
+
+.main-footer {
+	&__top {
+		background-color: $color--black;
+		padding: rem(48) 0 rem(72);
+
+		@include media(">=lg") {
+			padding: rem(96) 0 rem(144);
+		}
+
+		@include media(">=xxl") {
+			padding: rem(147) 0 rem(226);
+		}
+	}
+
+	&__mid {
+		background-color: $color-1;
+		padding: rem(26) 0 rem(65);
+
+		@include media(">=lg") {
+			padding: rem(60) 0 rem(120);
+		}
+
+		@include media(">=xxl") {
+			padding: rem(86) 0 rem(205);
+		}
+	}
+
+	&__bottom {
+		background-color: $body-background-color;
+		padding: rem(30) 0 rem(20);
+
+		@include media(">=lg") {
+			padding: rem(36) 0 rem(24);
+		}
+
+		@include media(">=xxl") {
+			padding: rem(45) 0 rem(28);
+		}
+	}
+
+	&__title {
+		color: $text-light;
+		margin-bottom: rem(60);
+
+		@include media(">=lg") {
+			margin-bottom: rem(120);
+		}
+
+		@include media(">=xxl") {
+			margin-bottom: rem(172);
+		}
+	}
+
+	&__reservations-title,
+	&__reservations-phone,
+	&__form-title,
+	&__mid-contact {
+		color: $text-light;
+	}
+
+	&__reservations-title,
+	&__form-title {
+		@include media(">=sm") {
+			text-align: right;
+		}
+	}
+
+	&__reservations,
+	&__form-wrapper,
+	&__mid-wrapper {
+		@include media(">=sm") {
+			display: grid;
+			grid-template-columns: auto 70%;
+			column-gap: rem(30);
+		}
+
+		@include media(">=md") {
+			grid-template-columns: auto 60%;
+			column-gap: rem(40);
+		}
+
+		@include media(">=lg") {
+			grid-template-columns: auto 49%;
+			column-gap: rem(60);
+		}
+
+		@include media(">=xl") {
+			column-gap: rem(90);
+		}
+
+		@include media(">=xxl") {
+			column-gap: rem(136);
+		}
+	}
+
+	&__mid-wrapper {
+		@include media(">=sm", "<md") {
+			display: grid;
+			grid-template-columns: auto;
+			gap: rem(30);
+		}
+	}
+
+	&__reservations {
+		margin-bottom: rem(50);
+
+		@include media(">=lg") {
+			margin-bottom: rem(100);
+		}
+
+		@include media(">=xxl") {
+			margin-bottom: rem(150);
+		}
+	}
+
+	&__reservations-links {
+		p {
+			margin-bottom: rem(21);
+			letter-spacing: rem(-1);
+
+			@include media("<sm") {
+				@include font(24, 32);
+			}
+		}
+	}
+
+	&__form-title {
+		margin-top: rem(20);
+	}
+
+	&__mid-right {
+		display: grid;
+		grid-template-columns: auto auto;
+		column-gap: rem(30);
+		margin-top: rem(34);
+
+		@include media("<xs") {
+			grid-template-columns: auto;
+			gap: rem(30);
+		}
+
+		@include media(">=sm", "<md") {
+			margin-top: 0;
+		}
+
+		@include media(">=md") {
+			column-gap: rem(40);
+			margin-top: rem(34);
+		}
+	}
+
+	&__mid-contact {
+		@include media(">=md") {
+			margin-top: rem(5);
+		}
+
+		p {
+			@include font(20, 28);
+			margin-bottom: 0;
+			letter-spacing: rem(-0.3);
+		}
+	}
+
+	&__mid-socials {
+		display: flex;
+		flex-direction: row;
+		gap: rem(20);
+
+		@include media(">=sm") {
+			justify-content: flex-end;
+		}
+	}
+
+	&__bottom-links {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: rem(24);
+
+		@include media(">=md") {
+			gap: rem(48);
+		}
+	}
+}

@@ -1,0 +1,202 @@
+@import "__settings/init";
+
+.main-header {
+	$header: &;
+	width: 100%;
+	max-width: inherit;
+	position: fixed;
+	inset: 0 0 auto 0;
+	z-index: 5;
+	height: rem(82);
+	// background-color: transparent;
+
+	// &.scrolled {
+	background-color: $color--black;
+
+	// 	#{$header}__wrapper {
+
+	// 	}
+	// }
+
+	&__wrapper {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		padding-block: rem(25);
+	}
+
+	&__logo-wrapper {
+		z-index: 1;
+
+		@include media("<xl") {
+			flex-grow: 1;
+		}
+	}
+
+	&__logo-link {
+		display: flex;
+		align-items: center;
+
+		span {
+			color: $text-light;
+
+			@include font(32, 32, 900, -0.5);
+
+			@include media("<sm") {
+				@include font(24, 24, 900, -0.5);
+			}
+		}
+	}
+
+	.main-nav {
+		ul a {
+			@include font(20, 20, 900);
+			margin: 0;
+			color: $text-light;
+			transition: opacity $default-transition;
+
+			&:hover {
+				opacity: 0.8;
+			}
+
+			// &[aria-current="page"] {
+			// 	pointer-events: none;
+			// }
+		}
+
+		ul li:not(.lang-item) {
+			margin-right: rem(24);
+
+			@include media("<xl") {
+				margin-right: 0;
+				width: 100%;
+				text-align: center;
+			}
+		}
+
+		ul li.lang-item:not(:last-child) {
+			margin-right: rem(14);
+			position: relative;
+
+			&::after {
+				content: "/";
+				position: absolute;
+				inset: 0 rem(-10) 0 auto;
+				color: $text-light;
+			}
+		}
+
+		ul li.lang-item a {
+			@include font(18, 18, 400);
+		}
+
+		@include media("<xl") {
+			background-color: $color--black;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-start;
+			position: absolute;
+			inset: 0 0 auto 0;
+			width: 100%;
+			height: 100vh;
+			overflow-y: auto;
+			visibility: hidden;
+			opacity: 0;
+			pointer-events: none;
+			transform: translateY(-100%);
+			transition:
+				visibility $default-transition,
+				opacity $default-transition;
+			border-radius: 0;
+			padding: rem(74) 0 rem(74);
+		}
+
+		@include media(">=xl") {
+			flex-grow: 1;
+			display: flex;
+			flex-direction: row;
+			background-color: transparent;
+			justify-content: space-between;
+			align-items: center;
+			height: auto;
+			min-height: unset;
+			padding: 0;
+		}
+	}
+
+	.menu {
+		display: flex;
+		flex-direction: row;
+		padding: rem(10) 0 0;
+		flex-grow: 1;
+		justify-content: flex-end;
+
+		@include media("<xl") {
+			flex-wrap: wrap;
+			justify-content: center;
+			row-gap: rem(10);
+			width: 100%;
+			max-width: calc(100% - #{rem(30)});
+			padding: rem(20) 0;
+			flex-grow: initial;
+		}
+
+		@include media("<lg") {
+			flex-grow: initial;
+		}
+	}
+
+	&__button {
+		background-color: transparent;
+		border: none;
+		padding: rem(8);
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+		width: inherit;
+		height: inherit;
+		cursor: pointer;
+		transition: transform $default-transition;
+
+		@include media(">=xl") {
+			display: none;
+		}
+	}
+
+	&__button-icon {
+		display: block;
+		width: rem(26);
+		height: rem(2);
+		background-color: $color--white;
+		position: relative;
+		cursor: pointer;
+		transition: background-color $default-transition, transform $default-transition;
+
+		&:not(:last-of-type) {
+			margin-bottom: rem(7);
+		}
+	}
+
+	&.open {
+		#{$header}__button-icon:first-of-type {
+			transform: translateY(9px) rotate(45deg);
+		}
+		#{$header}__button-icon:last-of-type {
+			transform: translateY(-9px) rotate(-45deg);
+		}
+		#{$header}__button-icon:nth-of-type(2) {
+			opacity: 0;
+		}
+		nav {
+			@include media("<xl") {
+				visibility: visible;
+				opacity: 1;
+				pointer-events: all;
+				transform: none;
+			}
+		}
+	}
+}

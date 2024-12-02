@@ -1,0 +1,72 @@
+@import "__settings/init";
+
+.wpcf7 {
+	input[type="text"],
+	input[type="email"],
+	input[type="tel"],
+	textarea {
+		@include font(18, 24, 400);
+		background-color: $color--black;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+		border-bottom: rem(1) solid $color--white;
+		border-radius: 0;
+		color: $text-light;
+		padding: rem(32) 0 rem(6);
+		width: 100%;
+		margin-bottom: rem(12);
+		margin-top: 0;
+
+		&::placeholder {
+			font-weight: 400;
+			color: $text-light;
+		}
+	}
+
+	textarea {
+		resize: none;
+		height: rem(64);
+		overflow-y: auto;
+		margin-top: rem(45);
+	}
+
+	.wpcf7-form {
+		p {
+			margin-bottom: rem(22);
+		}
+
+		.c-btn {
+			br {
+				display: none;
+			}
+		}
+	}
+
+	.wpcf7-not-valid-tip {
+		@include font(14, 14, 300);
+		padding: 0 0 rem(10) 0;
+		margin-top: rem(-10);
+	}
+
+	.wpcf7-response-output {
+		@include font(14, 14, 300);
+		margin-inline: 0 !important;
+		padding: 1em !important;
+		border-width: rem(1) !important;
+	}
+
+	.wpcf7-list-item {
+		margin-left: 0;
+		font-size: rem(14);
+
+		input[type="checkbox"] {
+			accent-color: $color--white;
+		}
+	}
+
+	.wpcf7-list-item-label::before {
+		width: rem(8);
+		display: inline-block;
+	}
+}
