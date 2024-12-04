@@ -75,7 +75,7 @@
 				content: "/";
 				position: absolute;
 				inset: 0 rem(-10) 0 auto;
-				color: $text-light;
+				color: inherit;
 			}
 		}
 
@@ -194,35 +194,35 @@
 
 	&.scrolled {
 		background-color: $color--black;
-
-		// @include media(">=lg") {
-		// 	box-shadow: 0 rem(2) rem(20) 0 rgba($color--black, 0.1);
-		// }
-
-		// #{$header}__nav {
-		// 	a {
-		// 		@include media(">=lg") {
-		// 			color: $text-color-base !important;
-		// 		}
-		// 	}
-		// }
-		// #{$header}__logo {
-		// 	&::before,
-		// 	&::after {
-		// 		background-color: $text-color-base;
-		// 	}
-
-		// 	svg path {
-		// 		fill: $text-color-base;
-		// 	}
-		// }
-
-		// #{$header}__button-icon {
-		// 	background-color: $text-color-base;
-		// }
 	}
+}
 
-	// &.top {
-	// 	transform: translateY(-100%);
-	// }
+.single-zespol {
+	.main-header {
+		background-color: $color--white;
+
+		&__logo-link {
+			span {
+				color: $text-color-base;
+			}
+		}
+
+		.main-nav {
+			ul a {
+				color: $text-color-base;
+			}
+
+			@include media("<xl") {
+				background-color: $color--white;
+			}
+		}
+
+		&__button-icon {
+			background-color: $text-color-base;
+		}
+
+		&.scrolled {
+			background-color: $color--white;
+		}
+	}
 }

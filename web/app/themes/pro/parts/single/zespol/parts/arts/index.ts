@@ -1,28 +1,26 @@
 /**
  * --------------------------------------------------------------------------
- * Initialize a content slider.
+ * Initialize a arts slider.
  * --------------------------------------------------------------------------
  */
 
 import { Slider } from '../../../../../js/lib/sliders';
-import GLightbox from 'glightbox';
-
 const $ = jQuery.noConflict();
 
-const initDefaultContentSlider = () => {
-    const defaultSliderWrapper = document.querySelector(
-        '.default-content__slider'
+const initSingleTeamArtsSlider = () => {
+    const singleTeamSliderWrapper = document.querySelector(
+        '.single-team-arts__slider'
     );
 
-    const currentSlideElement = document.querySelector('.default-content__slider-counter .current-slide');
-    const totalSlides = document.querySelector('.default-content__slider-counter .total-slides');
+    const currentSlideElement = document.querySelector('.single-team-arts__slider-counter .current-slide');
+    const totalSlides = document.querySelector('.single-team-arts__slider-counter .total-slides');
 
-    if (!defaultSliderWrapper) {
+    if (!singleTeamSliderWrapper) {
         return;
     }
 
-    if (defaultSliderWrapper) {
-        const defaultSlider = new Slider(defaultSliderWrapper, {
+    if (singleTeamSliderWrapper) {
+        const singleTeamSlider = new Slider(singleTeamSliderWrapper, {
             autoplay: false,
             infinite: false,
             speed: 500,
@@ -36,24 +34,18 @@ const initDefaultContentSlider = () => {
             nextArrow: '.slider-button--next',
         });
 
-        $(defaultSliderWrapper).on('init', function(event, slick) {
+        $(singleTeamSliderWrapper).on('init', function(event, slick) {
             if(totalSlides) {
                 totalSlides.textContent = slick.slideCount;
             }
         });
 
-        $(defaultSliderWrapper).on('afterChange', function(event, slick, currentSlide ) {
+        $(singleTeamSliderWrapper).on('afterChange', function(event, slick, currentSlide ) {
             if(currentSlideElement) {
                 currentSlideElement.textContent = slick.currentSlide + 1;
             }
         });
     }
-
-    const lightbox = GLightbox({
-        selector: '.default-content__slide-image img',
-        touchNavigation: true,
-        closeButton: true,
-    });
 };
 
-initDefaultContentSlider();
+initSingleTeamArtsSlider();

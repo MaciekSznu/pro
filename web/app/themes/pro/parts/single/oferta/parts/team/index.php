@@ -73,14 +73,17 @@ if ( ! empty( $so_slider ) ) {
 					$slide_img = wp_get_attachment_image( get_post_thumbnail_id( $slide ), 'slider-image' );
 					$slide_title = get_the_title( $slide );
 					$slide_functions = get_field( 'sp_functions', $slide );
-					// dodać link do single 
 					if ( ! empty( $slide_img ) ) :
 						?>
 						<div class="single-offer-team__slide">
-							<figure class="single-offer-team__slide-image">
-								<?php echo wp_kses_post( $slide_img ); ?>
-							</figure>
-							<p class="single-offer-team__slide-title"><?php echo esc_html( $slide_title ); ?></p>
+							<a href="<?php echo esc_url( get_permalink( $slide ) ); ?>" class="single-offer-team__slide-img-link">
+								<figure class="single-offer-team__slide-image">	
+									<?php echo wp_kses_post( $slide_img ); ?>
+								</figure>
+							</a>
+							<a href="<?php echo esc_url( get_permalink( $slide ) ); ?>" class="single-team-arts__slide-link">
+								<p class="single-offer-team__slide-title"><?php echo esc_html( $slide_title ); ?></p>
+							<a href="<?php echo esc_url( get_permalink( $slide ) ); ?>" class="single-offer-team__slide-link">
 							<p class="single-offer-team__slide-functions"><?php echo esc_html( $slide_functions ); ?></p>
 						</div>
 						<?php

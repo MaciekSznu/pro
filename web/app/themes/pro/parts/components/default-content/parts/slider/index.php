@@ -9,12 +9,15 @@
 
 $slider = $slider ?? null;
 
+// TODO: dodać lightbox
+
 if ( ! empty( $slider ) ) :
 	load_script( 'default-content/parts/slider', 'default-content-slider', array('slick_script') );
 	?>
 	<div class="default-content__slider-element">
 		<?php load_styles_components( 'sliders' ); ?>
 		<?php load_styles_third( 'slick' ); ?>
+		<?php load_styles_third( 'glightbox' ); ?>
 		<div class="default-content__slider-wrapper">
 			<div class="default-content__slider-counter">
 				<span class="current-slide">1</span>

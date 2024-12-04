@@ -209,6 +209,18 @@
 		}
 	}
 
+	&__slide-img-link {
+		aspect-ratio: 0.668;
+		display: block;
+		width: 100%;
+
+		&:hover {
+			img {
+				transform: scale(1.03);
+			}
+		}
+	}
+
 	&__slide {
 		width: rem(312);
 
@@ -225,6 +237,7 @@
 		position: relative;
 		width: 100%;
 		aspect-ratio: 0.668;
+		overflow: hidden;
 
 		img {
 			position: absolute;
@@ -233,7 +246,16 @@
 			height: 100%;
 			object-fit: cover;
 			margin: auto;
-			cursor: grab;
+			cursor: pointer;
+			transition: transform $default-transition;
+		}
+	}
+
+	&__slide-link {
+		transition: opacity $default-transition;
+
+		&:hover {
+			opacity: 0.8;
 		}
 	}
 
