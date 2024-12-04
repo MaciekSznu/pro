@@ -356,25 +356,27 @@ hr {
 }
 
 blockquote {
-	margin: 0 0 rem(14);
+	margin: 0 0 rem(8);
 	padding: 0;
 
-	@include media(">=md") {
-		margin-bottom: rem(26);
+	> p {
+		letter-spacing: rem(-0.3);
 	}
 
 	+ p {
 		text-align: right;
 		padding-right: rem(20);
 
-		@include font(16, 22);
+		@include font(16, 22, 400, -0.2);
 
 		@include media(">=md") {
 			@include font(18, 25);
+			padding-right: rem(30);
 		}
 
 		@include media(">=xl") {
 			@include font(20, 28);
+			padding-right: rem(42);
 		}
 	}
 }

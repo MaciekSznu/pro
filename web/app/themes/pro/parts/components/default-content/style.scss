@@ -148,8 +148,17 @@
 	&__blockquote {
 		display: flex;
 		flex-direction: column;
-		max-width: min(90%, #{rem(684)});
+		max-width: min(90%, #{rem(642)});
 		margin-inline: auto;
+		margin-bottom: rem(56);
+
+		@include media(">=lg") {
+			margin-bottom: rem(90);
+		}
+
+		@include media(">=xxl") {
+			margin-bottom: rem(131);
+		}
 	}
 
 	&__video-wrapper {
@@ -157,6 +166,16 @@
 		width: min(100%, #{rem(862)});
 		aspect-ratio: 1.504;
 		margin-inline: auto;
+		margin-block: rem(56);
+
+		@include media(">=lg") {
+			margin-block: rem(90);
+		}
+
+		@include media(">=xxl") {
+			margin-top: rem(142);
+			margin-bottom: rem(131);
+		}
 	}
 
 	&__video-placeholder {
