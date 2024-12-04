@@ -12,9 +12,9 @@ the_post();
 ?>
 <main id="main-content" class="page-content" role="main">
 	<?php load_styles_components( 'page' ); ?>
-	<?php get_theme_part( 'components/hero/index' ); ?>
 	<div class="page-entry">
-		<?php the_content(); ?>
+		<?php get_theme_part( 'components/video-hero/index' ); ?>
+		<?php get_theme_part( 'components/default-content/index' ); ?>
 	</div>
 </main>
 <?php

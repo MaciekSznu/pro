@@ -87,12 +87,17 @@
 			30,
 			30,
 			true
-		]
-        ,
+		],
         [
 			"footer-logo-bottom",
 			999,
 			50,
+			false
+		],
+        [
+			"slider-image",
+			868,
+			999,
 			false
 		]
 	]

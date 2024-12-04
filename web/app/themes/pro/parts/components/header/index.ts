@@ -1,4 +1,5 @@
 import { ScreenLock } from '../../../js/app/__constants/lock-screen';
+import throttle from 'lodash/throttle';
 
 class Header {
     header: HTMLElement | null;
@@ -21,6 +22,8 @@ class Header {
         }
         window.addEventListener('resize', () => this.resized());
         window.addEventListener('keydown', (e) => this.keyDown(e));
+
+        this.scrolled();
     }
 
     toggleMenu() {
@@ -57,6 +60,37 @@ class Header {
         if (this.header && !this.viewport.matches) {
             this.closeMenu();
         }
+    }
+
+    scrolled() {
+        // const topClass = 'top';
+        const scrolledClass = 'scrolled';
+
+        // let lastScrollY = window.scrollY;
+
+        window.addEventListener(
+            'scroll',
+            throttle(() => {
+                const currentScrollY = window.scrollY;
+
+                if (currentScrollY > 0) {
+                    // this.header?.classList.remove(topClass);
+                    this.header?.classList.add(scrolledClass);
+                } else {
+                    this.header?.classList.remove(scrolledClass);
+                }
+
+                // if (currentScrollY > lastScrollY) {
+                //     this.header?.classList.remove(scrolledClass);
+                //     // this.header?.classList.add(topClass);
+                // } else if (currentScrollY < lastScrollY && currentScrollY > 0) {
+                //     this.header?.classList.add(scrolledClass);
+                //     // this.header?.classList.remove(topClass);
+                // }
+
+                // lastScrollY = currentScrollY;
+            }, 100)
+        );
     }
 }
 

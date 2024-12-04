@@ -40,7 +40,8 @@
 		"wpackagist-plugin/safe-svg": "^2.0.1",
         "wpackagist-plugin/duplicate-post": "^4.4",
         "wpackagist-plugin/contact-form-7": "^6.0",
-        "wpackagist-plugin/polylang": "^3.6"
+        "wpackagist-plugin/polylang": "^3.6",
+        "wpackagist-plugin/classic-editor": "^1.6"
     },
     "require-dev": {
         "wp-cli/wp-cli": "^2.8.1",

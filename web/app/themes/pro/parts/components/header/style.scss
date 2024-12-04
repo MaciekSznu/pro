@@ -8,15 +8,7 @@
 	inset: 0 0 auto 0;
 	z-index: 5;
 	height: rem(82);
-	// background-color: transparent;
-
-	// &.scrolled {
-	background-color: $color--black;
-
-	// 	#{$header}__wrapper {
-
-	// 	}
-	// }
+	background-color: transparent;
 
 	&__wrapper {
 		display: flex;
@@ -199,4 +191,38 @@
 			}
 		}
 	}
+
+	&.scrolled {
+		background-color: $color--black;
+
+		// @include media(">=lg") {
+		// 	box-shadow: 0 rem(2) rem(20) 0 rgba($color--black, 0.1);
+		// }
+
+		// #{$header}__nav {
+		// 	a {
+		// 		@include media(">=lg") {
+		// 			color: $text-color-base !important;
+		// 		}
+		// 	}
+		// }
+		// #{$header}__logo {
+		// 	&::before,
+		// 	&::after {
+		// 		background-color: $text-color-base;
+		// 	}
+
+		// 	svg path {
+		// 		fill: $text-color-base;
+		// 	}
+		// }
+
+		// #{$header}__button-icon {
+		// 	background-color: $text-color-base;
+		// }
+	}
+
+	// &.top {
+	// 	transform: translateY(-100%);
+	// }
 }

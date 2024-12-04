@@ -2,6 +2,7 @@
 import { vhUnit } from '../__constants/vhUnit';
 import { detectDevice } from '../__constants/detectDevice';
 import { ScreenLock } from '../__constants/lock-screen';
+import { initVideo } from '../__utils/initVideo';
 
 // GLOBAL APP CONTROLLER
 const controller = {
@@ -11,6 +12,7 @@ const controller = {
     },
     loaded() {
         document.querySelector('body')?.classList.add('page-has-loaded');
+        initVideo();
     },
     resized() {
         vhUnit();

@@ -355,4 +355,28 @@ hr {
 	background: $color--black;
 }
 
+blockquote {
+	margin: 0 0 rem(14);
+	padding: 0;
+
+	@include media(">=md") {
+		margin-bottom: rem(26);
+	}
+
+	+ p {
+		text-align: right;
+		padding-right: rem(20);
+
+		@include font(16, 22);
+
+		@include media(">=md") {
+			@include font(18, 25);
+		}
+
+		@include media(">=xl") {
+			@include font(20, 28);
+		}
+	}
+}
+
 /* stylelint-enable */

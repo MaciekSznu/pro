@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2e0b65ec756000b63f565dea7ca81e49",
+    "content-hash": "470c8580754ce6b864be082fd0b4d5a6",
     "packages": [
         {
             "name": "acf-icon-picker/acf-icon-picker",
@@ -844,6 +844,24 @@
                 "symlink": false,
                 "relative": true
             }
+        },
+        {
+            "name": "wpackagist-plugin/classic-editor",
+            "version": "1.6.6",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/classic-editor/",
+                "reference": "tags/1.6.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/classic-editor.1.6.6.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/classic-editor/"
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
