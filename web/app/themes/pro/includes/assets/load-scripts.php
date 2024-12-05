@@ -52,6 +52,9 @@ function load_theme_scripts() {
 			true
 		);
 
+		$string_hash = post_nonce();
+		$ajax_nonce  = 'var ajax_nonce = "' . wp_create_nonce( $string_hash ) . '"';
+		wp_add_inline_script( 'script', $ajax_nonce );
 }
 add_action( 'wp_enqueue_scripts', 'load_theme_scripts' );
 

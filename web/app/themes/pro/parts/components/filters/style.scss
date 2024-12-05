@@ -1,0 +1,177 @@
+@import "__settings/init";
+
+.offer-filters {
+	margin-top: rem(92);
+
+	&__hero {
+		margin-bottom: rem(60);
+	}
+
+	&__filters-heading {
+		margin-bottom: rem(27);
+	}
+
+	.archive-results {
+		display: grid;
+		gap: rem(40) rem(20);
+
+		@include media(">=sm") {
+			grid-template-columns: 1fr 1fr;
+			gap: rem(80) rem(20);
+		}
+
+		@include media(">=md") {
+			grid-template-columns: 1fr 1fr 1fr;
+			gap: rem(120) rem(20);
+		}
+
+		@include media(">=xl") {
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			gap: rem(158) rem(20);
+		}
+	}
+
+	+ .default-content {
+		padding-top: rem(70);
+
+		@include media(">=lg") {
+			padding-top: rem(110);
+		}
+
+		@include media(">=xxl") {
+			padding-top: rem(173);
+		}
+	}
+}
+
+.archive-filters-wrapper {
+	display: grid;
+	grid-template-columns: auto;
+	justify-content: start;
+	gap: rem(20);
+
+	@include media(">=md") {
+		grid-template-columns: auto auto;
+		justify-content: end;
+		column-gap: rem(88);
+	}
+
+	&__filters {
+		display: grid;
+		grid-template-columns: repeat(3, auto);
+		gap: rem(20);
+
+		@include media(">=md") {
+			column-gap: rem(40);
+		}
+
+		@include media(">=xl") {
+			column-gap: rem(90);
+		}
+	}
+
+	.archive-filter {
+
+		&__filter-item {
+			display: flex;
+			flex-direction: column;
+		}
+
+		&__filter-option {
+			@include font(15, 30, 400, 1);
+			text-transform: uppercase;
+			border: none;
+			background: transparent;
+			padding: 0;
+			text-align: left;
+			cursor: pointer;
+
+			&.selected {
+				font-weight: 900;
+			}
+		}
+	}
+
+	.archive-search__button-wrapper {
+		.c-btn {
+			min-width: rem(139);
+		}
+	}
+}
+
+.archive-button-wrapper {
+	margin-top: rem(40);
+
+	&[data-max="0"],
+	&[data-max="1"] {
+		display: none;
+	}
+
+	@include media(">=md") {
+		margin-top: rem(80);
+		display: flex;
+		justify-content: flex-end;
+	}
+
+	&.hide {
+		display: none;
+	}
+}
+
+.single-offer-card {
+	width: 100%;
+
+	&__img-link {
+		aspect-ratio: 0.668;
+		display: block;
+		width: 100%;
+
+		&:hover {
+			img {
+				transform: scale(1.03);
+			}
+		}
+	}
+
+	&__image {
+		position: relative;
+		width: 100%;
+		aspect-ratio: 0.668;
+		overflow: hidden;
+
+		img {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			margin: auto;
+			cursor: pointer;
+			transition: transform $default-transition;
+		}
+	}
+
+	&__link {
+		transition: opacity $default-transition;
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+
+	&__type {
+		@include font(14, 32, 400, 1);
+		margin: rem(16) 0 rem(6);
+		text-transform: uppercase;
+	}
+
+	&__title {
+		@include font(24, 28, 900, -0.5);
+		margin: 0;
+		color: $text-color-base;
+
+		@include media(">=md") {
+			@include font(36, 40, 900, -0.5);
+		}
+	}
+}

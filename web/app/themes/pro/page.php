@@ -14,6 +14,7 @@ the_post();
 	<?php load_styles_components( 'page' ); ?>
 	<div class="page-entry">
 		<?php get_theme_part( 'components/video-hero/index' ); ?>
+		<?php get_theme_part( 'components/filters/index' ); ?>
 		<?php get_theme_part( 'components/default-content/index' ); ?>
 	</div>
 </main>

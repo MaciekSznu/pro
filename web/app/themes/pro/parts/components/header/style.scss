@@ -42,19 +42,20 @@
 	}
 
 	.main-nav {
-		ul a {
-			@include font(20, 20, 900);
-			margin: 0;
+
+		ul li {
 			color: $text-light;
-			transition: opacity $default-transition;
 
-			&:hover {
-				opacity: 0.8;
+			a {
+				@include font(20, 20, 900);
+				margin: 0;
+				color: inherit;
+				transition: opacity $default-transition;
+
+				&:hover {
+					opacity: 0.8;
+				}
 			}
-
-			// &[aria-current="page"] {
-			// 	pointer-events: none;
-			// }
 		}
 
 		ul li:not(.lang-item) {
@@ -208,7 +209,7 @@
 		}
 
 		.main-nav {
-			ul a {
+			ul li {
 				color: $text-color-base;
 			}
 
