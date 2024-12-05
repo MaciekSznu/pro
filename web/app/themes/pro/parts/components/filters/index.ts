@@ -7,7 +7,7 @@ declare const ajax_nonce: string;
 declare const WP: { ajaxUrl: string };
 
 class Filters {
-    pageContent: HTMLElement | null;
+    // pageContent: HTMLElement | null;
     resultsGrid: HTMLElement | null;
     filterItems: NodeListOf<HTMLSelectElement> | null;
     filtersButton: HTMLButtonElement | null;
@@ -20,7 +20,7 @@ class Filters {
     allowAjax: boolean;
 
     constructor() {
-        this.pageContent = document.querySelector('.page-content');
+        // this.pageContent = document.querySelector('.page-content');
         this.resultsGrid = document.querySelector('.archive-grid');
         this.filterItems = document.querySelectorAll(
             '.archive-filter__filter-item'
@@ -110,14 +110,17 @@ class Filters {
 
     urlFunction() {
         const url = window.location.search;
-        window.addEventListener('popstate', () => {
-            location.reload();
-        });
+        if (url) {
+            window.addEventListener('popstate', () => {
+                location.reload();
+            });
+        }
+
         const urlParams = new URLSearchParams(url);
 
-        urlParams.forEach((value, key) => {
-            this.taxonomies[key] = value;
-        });
+        // urlParams.forEach((value, key) => {
+        //     this.taxonomies[key] = value;
+        // });
     }
 
     loadMoreTrigger() {
@@ -175,30 +178,30 @@ class Filters {
             },
 
             beforeSend: () => {
-                this.pageContent?.classList.add('results-loading');
+                this.results?.classList.add('results-loading');
             },
 
             error: (response) => {
                 // eslint-disable-next-line no-console
                 console.log(response.responseText);
-                this.pageContent?.classList.remove('results-loading');
+                this.results?.classList.remove('results-loading');
                 this.allowAjax = true;
             },
 
             success: (response) => {
                 // eslint-disable-next-line no-restricted-globals
-                history.pushState(null, '', response.url);
+                // history.pushState(null, '', response.url);
                 this.allowAjax = true;
                 this.setLoadMoreTriggerVisibility(response);
                 if (this.results && !loadMore) {
                     this.results.innerHTML = response.posts_content;
-                    this.pageContent?.classList.remove('results-loading');
+                    this.results?.classList.remove('results-loading');
                 } else {
                     this.results?.insertAdjacentHTML(
                         'beforeend',
                         response.posts_content
                     );
-                    this.pageContent?.classList.remove('results-loading');
+                    this.results?.classList.remove('results-loading');
                 }
             },
         });

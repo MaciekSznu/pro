@@ -38,7 +38,7 @@ $query = posts_query( $p_type, 1, $ppp, $get_taxonomies );
 load_script( 'filters', 'pro/filters' );
 
 ?>
-	<section class="offer-filters">
+	<section class="offer-filters" id="oferta">
 		<?php load_styles( __DIR__, 'filters' ); ?>
 		<div class="offer-filters__hero">
 			<div class="offer-filters__filters">

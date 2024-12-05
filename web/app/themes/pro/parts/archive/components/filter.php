@@ -17,7 +17,7 @@ $get_taxonomies        = ! empty( $get_taxonomies ) ? $get_taxonomies : false;
 if ( ! empty( $taxonomy_name ) ) :
 	?>
 	<div class="archive-filter">
-		<div class="archive-filter__filter-item" data-term="<?php echo esc_attr( $sub_cat_term_id ); ?>" data-tax="<?php echo esc_attr( $taxonomy_name ); ?>" data-slug="">	
+		<div class="archive-filter__filter-item" data-term="<?php //echo esc_attr( $sub_cat_term_id ); ?>" data-tax="<?php echo esc_attr( $taxonomy_name ); ?>" data-slug="">	
 			<?php
 			$parent_terms = get_terms(
 				array(
@@ -49,9 +49,9 @@ if ( ! empty( $taxonomy_name ) ) :
 						data-tax="<?php echo esc_attr( $taxonomy_name ); ?>"
 						data-slug="<?php echo esc_attr( $item->slug ); ?>"
 						<?php
-						if ( isset( $sub_cat_term_id ) && $item->term_id === $sub_cat_term_id ) {
-							echo 'selected';
-						}
+						// if ( isset( $sub_cat_term_id ) && $item->term_id === $sub_cat_term_id ) {
+						// 	echo 'selected';
+						// }
 						?>
 						>
 						<?php echo esc_html( $item->name ); ?>

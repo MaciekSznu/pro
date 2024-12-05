@@ -7,11 +7,12 @@
  * @since pro 1.0
  */
 
-$default_content = get_field( 'content' );
+$default_content 	= get_field( 'content' );
+$section_id 		= ! is_single() ? 'o-nas' : '';
 
 if ( ! empty( $default_content ) ) :
 	?>
-	<section class="default-content">
+	<section class="default-content" id="<?php echo esc_attr( $section_id ); ?>">
 		<?php load_styles( __DIR__, 'default-content' ); ?>
 		<?php foreach ( $default_content as $item )
 			{

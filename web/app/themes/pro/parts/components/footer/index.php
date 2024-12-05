@@ -20,11 +20,11 @@ $of_social_media 	= get_field ( 'of_social_media', 'option' );
 $of_links = get_field ( 'of_links', 'option' );
 
 ?>
-<footer class="main-footer" role="contentinfo">
+<footer class="main-footer" role="contentinfo" id="kontakt">
 	<?php load_styles( __DIR__, 'footer' ); ?>
 	<div class="main-footer__top">
 		<div class="container">
-			<div class="main-footer__top-wrapper" id="kontakt">
+			<div class="main-footer__top-wrapper">
 				<h1 class="main-footer__title"><?php echo esc_html_e( 'Kontakt', 'pro' ); ?></h1>
 				<div class="main-footer__reservations">
 					<p class="main-footer__reservations-title lead black"><?php echo esc_html( $of_reservation_title ); ?></p>

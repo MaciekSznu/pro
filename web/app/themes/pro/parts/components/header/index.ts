@@ -5,12 +5,16 @@ class Header {
     header: HTMLElement | null;
     btnMenu: HTMLElement | null;
     viewport: MediaQueryList;
+    hashLinks: NodeListOf<HTMLAnchorElement> | null;
 
     constructor() {
         this.header = document.querySelector('.main-header');
         this.btnMenu =
             this.header && this.header.querySelector('.main-header__button');
         this.viewport = window.matchMedia('screen and (max-width: 1199px)');
+        this.hashLinks =
+            this.header &&
+            this.header.querySelectorAll('a[href^="#"]:not([href="#"])');
     }
 
     init() {
@@ -20,10 +24,43 @@ class Header {
         if (this.btnMenu) {
             this.btnMenu.addEventListener('click', () => this.toggleMenu());
         }
+        if (this.hashLinks) {
+            this.handleHashLinks();
+        }
         window.addEventListener('resize', () => this.resized());
         window.addEventListener('keydown', (e) => this.keyDown(e));
 
         this.scrolled();
+    }
+
+    scrollToSection(e: Event) {
+        e.preventDefault();
+        const targetElement = e.target as HTMLAnchorElement;
+        const href = targetElement?.getAttribute('href');
+        if (!href) {
+            return;
+        }
+        const target = document.querySelector(href);
+        const stickyHeight = this.header?.offsetHeight
+            ? this.header?.offsetHeight
+            : 0;
+        if (target) {
+            window.scrollTo({
+                top: (target as HTMLElement).offsetTop - stickyHeight,
+                behavior: 'smooth',
+            });
+        }
+    }
+
+    handleHashLinks() {
+        if (this.hashLinks) {
+            this.hashLinks.forEach((link) => {
+                link.addEventListener('click', (e) => {
+                    this.closeMenu();
+                    this.scrollToSection(e);
+                });
+            });
+        }
     }
 
     toggleMenu() {
@@ -67,6 +104,10 @@ class Header {
         const scrolledClass = 'scrolled';
 
         // let lastScrollY = window.scrollY;
+
+        if (window.scrollY > 0) {
+            this.header?.classList.add(scrolledClass);
+        }
 
         window.addEventListener(
             'scroll',
